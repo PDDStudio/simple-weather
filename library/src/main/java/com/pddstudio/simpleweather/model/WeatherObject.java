@@ -30,10 +30,12 @@ public class WeatherObject {
     }
 
     public String getShortWeatherDesc() {
+        if(weatherModel == null) return null;
         return weatherModel[0].getShortDesc();
     }
 
     public String getLongWeatherDesc() {
+        if(weatherModel == null) return null;
         return weatherModel[0].getLongDesc();
     }
 

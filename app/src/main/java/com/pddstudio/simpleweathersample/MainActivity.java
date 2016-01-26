@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.pddstudio.simpleweather.SimpleWeather;
 import com.pddstudio.simpleweather.WeatherRequest;
+import com.pddstudio.simpleweather.enums.RequestTime;
 import com.pddstudio.simpleweather.enums.RequestType;
 import com.pddstudio.simpleweather.enums.TempUnit;
 import com.pddstudio.simpleweather.misc.ConvertUtil;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements SimpleWeather.Cal
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                WeatherRequest weatherRequest = new WeatherRequest.Builder(RequestType.CITY_NAME).withCityName("Karlsruhe").build();
+                WeatherRequest weatherRequest = new WeatherRequest.Builder(RequestType.CITY_NAME).withRequestTime(RequestTime.CURRENT).withCityName("Karlsruhe").build();
                 new SimpleWeather(MainActivity.this).request(weatherRequest).execute();
             }
         });
